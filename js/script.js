@@ -51,3 +51,62 @@ arrayDeObjetos.push({
 });
 
 console.log(arrayDeObjetos);
+
+const arrayNumeros = [5, 15, 25, 35, 45, 105];
+
+// for (let valor of arrayNumeros) {
+//     console.log(valor);
+// }
+
+arrayNumeros.forEach((numero, indice) => console.log(indice + '. ' +numero));
+
+// Array gerado terá sempre o mesmo tamanho do original
+const arrayDobro = arrayNumeros.map(numero => numero*2);
+
+console.log(arrayNumeros);
+console.log(arrayDobro);
+
+// Array gerado terá sempre o mesmo tamanho ou será menor do que o original
+const maioresQueVinte = arrayNumeros.filter(numero => numero > 20);
+
+console.log(maioresQueVinte);
+
+// Apenas um valor gerado 
+const totalArray = arrayNumeros.reduce(
+    (total, numero) => total += numero,
+    0
+);
+
+console.log(totalArray);
+
+const arrayLetras = ['B', 'R', 'A', 'S', 'I', 'L'];
+
+// const texto = arrayLetras.reduce(
+//     (palavra, letra) => palavra += letra,
+//     ''
+// );
+
+console.log(arrayLetras.join(''));
+console.log(arrayLetras.includes('Z'));
+console.log(arrayLetras.findIndex(value => value === 'Z'));
+console.log(arrayLetras.join('').replace('S', 'Z'));
+
+const posicao = arrayLetras.findIndex(value => value === 'S');
+arrayLetras[posicao] = 'Z';
+
+console.log(arrayLetras);
+
+// Juntar arrays
+
+//concat
+const arrayCompleto = [false, true, [22, 33]].concat(arrayNumeros, arrayLetras);
+
+console.log(arrayCompleto);
+
+//spread operator (...)
+const arrayCompleto2 = [3, 11, true, ...arrayNumeros, ...arrayLetras];
+
+console.log(arrayCompleto2);
+
+console.log(arrayLetras.reverse());
+    
